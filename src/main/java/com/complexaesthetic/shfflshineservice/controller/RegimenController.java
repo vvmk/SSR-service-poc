@@ -48,7 +48,7 @@ public class RegimenController {
         return null;
     }
 
-    @RequestMapping(value = "/regimens/{regimenId}",method = DELETE)
+    @RequestMapping(value = "/regimens/{regimenId}", method = DELETE)
     public ResponseEntity deleteRegimenById(@PathVariable Long regimenId) {
         return null;
     }

@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 @Entity
 public class Preference<T> {
     private String name;
+    private T data;
 
     public String getName() {
         return name;
@@ -28,6 +29,4 @@ public class Preference<T> {
     public void setData(T data) {
         this.data = data;
     }
-
-    private T data;
 }

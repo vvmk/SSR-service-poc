@@ -1,6 +1,15 @@
 package com.complexaesthetic.shfflshineservice.controller;
 
-import org.springframework.web.bind.annotation.RestController;
+import com.complexaesthetic.shfflshineservice.domain.Preference;
+import com.complexaesthetic.shfflshineservice.domain.User;
+import com.complexaesthetic.shfflshineservice.service.interfaces.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Set;
+
+import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 /**
  * project: shffl-shine-service
@@ -11,4 +20,51 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UserController {
+
+    private UserService userService;
+
+    @Autowired
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    @RequestMapping(value = "/users", method = GET)
+    public ResponseEntity<Iterable<User>> getAllUsers() {
+        return null;
+    }
+
+    @RequestMapping(value = "/users/{userId}", method = GET)
+    public ResponseEntity<User> getUser(@PathVariable Long userId) {
+        return null;
+    }
+
+    @RequestMapping(value = "/users/{userId}/preferences", method = GET)
+    public ResponseEntity<Set<Preference>> getPreferencesByUserId(@PathVariable Long userId) {
+        return null;
+    }
+
+    @RequestMapping(value = "/users/{userId}/preferences", method = GET)
+    public ResponseEntity<Preference> getPreferenceByName(@RequestParam String name, @PathVariable Long userId) {
+        return null;
+    }
+
+    @RequestMapping(value = "/users", method = POST)
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        return null;
+    }
+
+    @RequestMapping(value = "/users/{userId}/preferences", method = POST)
+    public ResponseEntity<Preference> createPreference(@RequestBody Preference preference, @PathVariable Long userId) {
+        return null;
+    }
+
+    @RequestMapping(value = "/users/{userId}", method = PUT)
+    public ResponseEntity<User> updateUser(@RequestBody User user, @PathVariable Long userId) {
+        return null;
+    }
+
+    @RequestMapping(value = "/users/{userId}/preferences", method = PUT)
+    public ResponseEntity<Preference> updatePreference(@RequestBody Preference preference, @PathVariable Long userId) {
+        return null;
+    }
 }
