@@ -16,7 +16,6 @@ public class User {
     @GeneratedValue
     private Long userId;
     private String username;
-    private String password;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
@@ -36,14 +35,6 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public Iterable<Regimen> getRegimens() {
