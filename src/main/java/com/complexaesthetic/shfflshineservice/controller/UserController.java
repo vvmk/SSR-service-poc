@@ -39,12 +39,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/users/{userId}/preferences", method = GET)
-    public ResponseEntity<Set<Preference>> getPreferencesByUserId(@PathVariable Long userId) {
-        return null;
-    }
-
-    @RequestMapping(value = "/users/{userId}/preferences", method = GET)
-    public ResponseEntity<Preference> getPreferenceByName(@RequestParam String name, @PathVariable Long userId) {
+    public ResponseEntity<Set<Preference>> getUserPreferences(@PathVariable Long userId) {
         return null;
     }
 

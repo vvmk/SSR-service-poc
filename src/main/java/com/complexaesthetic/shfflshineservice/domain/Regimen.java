@@ -1,6 +1,7 @@
 package com.complexaesthetic.shfflshineservice.domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * project: shffl-shine-service
@@ -18,9 +19,9 @@ public class Regimen {
 
     private String name;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "regimen_id")
-    private Iterable<Drill> drills;
+    private List<Drill> drills;
 
     public Long getRegimenId() {
         return regimenId;
@@ -38,11 +39,11 @@ public class Regimen {
         this.name = name;
     }
 
-    public Iterable<Drill> getDrills() {
+    public List<Drill> getDrills() {
         return drills;
     }
 
-    public void setDrills(Iterable<Drill> drills) {
+    public void setDrills(List<Drill> drills) {
         this.drills = drills;
     }
 }

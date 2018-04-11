@@ -1,6 +1,8 @@
 package com.complexaesthetic.shfflshineservice.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 /**
  * project: shffl-shine-service
@@ -10,9 +12,14 @@ import javax.persistence.Entity;
  */
 
 @Entity
-public class Preference<T> {
+public class Preference {
+
+    @Id
+    @GeneratedValue
+    private Long preferenceId;
+
     private String name;
-    private T data;
+    private String data;
 
     public String getName() {
         return name;
@@ -22,11 +29,11 @@ public class Preference<T> {
         this.name = name;
     }
 
-    public T getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(T data) {
+    public void setData(String data) {
         this.data = data;
     }
 }
